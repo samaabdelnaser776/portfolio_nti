@@ -1,0 +1,22 @@
+<h2>Education</h2>
+
+<section id="education">
+
+  @if (educations?.length > 0) {
+
+    @for (e of educations; track e._id) {
+      <div class="education-container">
+      <div class="education-card">
+        <h3>{{ e.institutionname }}</h3>
+        <p>{{ e.degreetype }}</p>
+        <p>{{ e.fieldOfStudy }}</p>
+        <p>{{ e.startDate }} - {{ e.endDate }}</p>
+      </div>
+    </div>
+    }
+
+  } @else {
+    <p>Loading education...</p>
+  }
+
+</section>

@@ -1,0 +1,28 @@
+<h2>Projects</h2>
+
+<section id="projects">
+
+  @if (projects?.length > 0) {
+
+    @for (p of projects; track p._id) {
+       <div class="projects-container">
+
+
+      <div class="education-card">
+  <img [src]="p.image" *ngIf="p.image">
+
+  <h3>{{ p.title }}</h3>
+
+  <p>{{ p.description }}</p>
+
+  <a [href]="p.githubUrl" target="_blank">GitHub</a>
+  <a [href]="p.liveUrl" target="_blank">Live Demo</a>
+</div> </div>
+
+    }
+
+  } @else {
+    <p>Loading projects...</p>
+  }
+
+</section>

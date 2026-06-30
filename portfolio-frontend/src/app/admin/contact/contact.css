@@ -1,0 +1,46 @@
+.messages-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.message-card {
+  width: 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.message-card:hover {
+  transform: translateY(-5px);
+}
+
+.message-card h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.email {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  word-break: break-word;
+}
+
+.message {
+  line-height: 1.6;
+  color: #333;
+  min-height: 80px;
+}
+
+.message-card small {
+  display: block;
+  margin-top: 20px;
+  color: gray;
+  font-size: 12px;
+  text-align: right;
+}

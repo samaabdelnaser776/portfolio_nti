@@ -1,0 +1,91 @@
+
+<h1>Education Admin</h1>
+
+<form #educationForm="ngForm"
+      (ngSubmit)="saveEducation(educationForm)">
+
+  <input
+    type="text"
+    name="institutionname"
+    [(ngModel)]="education.institutionname"
+    placeholder="Institution"
+    required>
+
+  <br><br>
+
+  <input
+    type="text"
+    name="degreetype"
+    [(ngModel)]="education.degreetype"
+    placeholder="Degree"
+    required>
+
+  <br><br>
+
+  <input
+    type="text"
+    name="fieldOfStudy"
+    [(ngModel)]="education.fieldOfStudy"
+    placeholder="Field of Study"
+    required>
+
+  <br><br>
+
+  <input
+    type="date"
+    name="startDate"
+    [(ngModel)]="education.startDate">
+
+  <br><br>
+
+  <input
+    type="date"
+    name="endDate"
+    [(ngModel)]="education.endDate">
+
+  <br><br>
+
+  <button type="submit">
+    {{ isEditMode ? 'Update' : 'Save' }}
+  </button>
+
+</form>
+
+<hr>
+
+<table border="1">
+
+  <tr>
+    <th>Institution</th>
+    <th>Degree</th>
+    <th>Field</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let e of educations">
+
+    <td>{{ e.institutionname }}</td>
+
+    <td>{{ e.degreetype }}</td>
+
+    <td>{{ e.fieldOfStudy }}</td>
+
+    <td>
+
+      <button
+        type="button"
+        (click)="editEducation(e)">
+        Edit
+      </button>
+
+      <button
+        type="button"
+        (click)="deleteEducation(e._id!)">
+        Delete
+      </button>
+
+    </td>
+
+  </tr>
+
+</table>

@@ -1,0 +1,15 @@
+<h2>Messages</h2>
+
+<div class="messages-container">
+  @for (m of messages; track m._id) {
+    <div class="message-card">
+      <h3>{{ m.name }}</h3>
+
+      <p class="email">{{ m.email }}</p>
+
+      <p class="message">{{ m.message }}</p>
+
+      <small>{{ m.createdAt | date:'medium' }}</small>
+    </div>
+  }
+</div>

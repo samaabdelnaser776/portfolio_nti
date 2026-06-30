@@ -1,0 +1,72 @@
+<h1>Projects Admin Page</h1>
+
+<form #projectForm="ngForm"
+      (ngSubmit)="saveProject(projectForm)">
+
+  <input
+    type="text"
+    name="title"
+    [(ngModel)]="project.title"
+    required
+    placeholder="Project Title">
+
+  <br><br>
+
+  <textarea
+    name="description"
+    [(ngModel)]="project.description"
+    required
+    placeholder="Description">
+  </textarea>
+
+  <br><br>
+
+  <input
+    type="text"
+    name="githubUrl"
+    [(ngModel)]="project.githubUrl"
+    placeholder="Github URL">
+
+  <br><br>
+<input
+  type="text"
+  name="image"
+  [(ngModel)]="project.image"
+  placeholder="Image URL">
+  
+<br><br><button type="submit"> 
+    {{ isEditMode ? 'Update' : 'Save' }}
+  </button>
+
+  
+</form>
+
+<hr>
+
+<table border="1">
+
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let p of projects">
+
+    <td>{{ p.title }}</td>
+
+    <td>{{ p.description }}</td>
+
+    <td>
+      <button (click)="editProject(p)" type="button">
+        Edit
+      </button>
+
+      <button (click)="deleteProject(p._id)" type="button">
+        Delete
+      </button>
+    </td>
+
+  </tr>
+
+</table>

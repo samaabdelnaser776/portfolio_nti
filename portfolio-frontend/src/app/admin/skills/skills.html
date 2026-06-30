@@ -1,0 +1,42 @@
+<h1>Skills Admin</h1>
+
+<form #skillForm="ngForm" (ngSubmit)="saveSkill(skillForm)">
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="skill.name"
+    required
+    placeholder="Skill Name">
+
+  <br><br>
+
+  <button type="submit" [disabled]="skillForm.invalid">
+    {{ isEditMode ? 'Update' : 'Save' }}
+  </button>
+</form>
+
+<hr>
+
+<table border="1" *ngIf="skills && skills.length > 0">
+  <thead>
+    <tr>
+      <th>Skill</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of skills">
+      <td>{{ s.name }}</td>
+      <td>
+        <button type="button" (click)="editSkill(s)">
+          Edit
+        </button>
+        <button type="button" (click)="deleteSkill(s._id!)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <p *ngIf="!skills || skills.length === 0">No skills added yet.</p> -->

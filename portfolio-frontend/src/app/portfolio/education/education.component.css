@@ -1,0 +1,20 @@
+#education {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px;
+}
+
+.education-card {
+  width: 280px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.education-card h3 {
+  color: #6b3e2e;
+  margin-bottom: 10px;
+}
